@@ -4,7 +4,7 @@ import io from 'socket.io-client';
 const OnlineUsers = ({sender, users, setReceiver }) => {
   console.log(users); 
   console.log(sender)
-  const socket = io('http://localhost:5000');
+  const socket = io('https://chatapp-szx4.onrender.com');
   const handleLogout = () => {
     socket.emit('updateStatus', sender._id, 'offline');
     localStorage.removeItem('authToken');

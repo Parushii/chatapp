@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Register from './Register';
 import Chat from './Chat';
 
-const socket = io('http://localhost:5000');
+const socket = io('https://chatapp-szx4.onrender.com');
 
 function App() {
   const [message, setMessage] = useState('');
@@ -23,7 +23,7 @@ function App() {
         throw new Error('No token found');
       }
 
-      const response = await axios.get('http://localhost:5000/api/user/getusers', {
+      const response = await axios.get('https://chatapp-szx4.onrender.com/api/user/getusers', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -38,7 +38,7 @@ function App() {
   const fetchChatHistory = async (contactId) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/chat/getChatHistory/${user._id}/${contactId}`
+        `https://chatapp-szx4.onrender.com/api/chat/getChatHistory/${user._id}/${contactId}`
       );
       setMessages(response.data); 
     } catch (error) {
