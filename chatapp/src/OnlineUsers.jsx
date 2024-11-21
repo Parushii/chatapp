@@ -4,7 +4,7 @@ import io from 'socket.io-client';
 const OnlineUsers = ({sender, users, setReceiver }) => {
   console.log(users); 
   console.log(sender)
-  const socket = io('https://chatapp-szx4.onrender.com');
+  const socket = io('http://localhost:5000');
   const handleLogout = () => {
     socket.emit('updateStatus', sender._id, 'offline');
     localStorage.removeItem('authToken');
@@ -16,7 +16,7 @@ const OnlineUsers = ({sender, users, setReceiver }) => {
     <div className="w-1/4 h-screen bg-purple-100 p-4 rounded-lg shadow-md flex flex-col justify-between">
       <div>
         <h3 className="text-lg font-semibold mb-4 text-gray-800 text-center">
-          Online Users
+          Users
         </h3>
         <ul className="space-y-2">
           {users && users.length > 0 ? (

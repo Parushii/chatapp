@@ -10,7 +10,7 @@ const Register = ({ setUser }) => {
   const handleRegister = async () => {
     try {
       const response = await axios.post(
-        'https://chatapp-szx4.onrender.com/api/auth/signup',
+        'http://localhost:5000/api/auth/signup',
         { email,username, password },
         {
           headers: { "Content-Type": "application/json" },

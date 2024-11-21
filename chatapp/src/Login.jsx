@@ -14,7 +14,7 @@ const Login = ({ setUser }) => {
     }
     try {
       const response = await axios.post(
-        'https://chatapp-szx4.onrender.com/api/auth/signin',
+        'http://localhost:5000/api/auth/signin',
         { email, password },
         {
           headers: { "Content-Type": "application/json" },

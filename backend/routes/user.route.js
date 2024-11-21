@@ -6,6 +6,6 @@ import { verifyToken } from '../utils/verifyUser.js';
 const router=express.Router()
 
 router.get('/getusers',verifyToken,getUsers)
-router.get('/:userId',getUser)
+router.get('/:userId',verifyToken,getUser)
 
 export default router;
